@@ -37,7 +37,6 @@ export const GptSearchBar = () => {
 			//Error handling
 		}
 
-		console.log(gptResults.choices?.[0]?.message?.content);
 		const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
 
 		const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
@@ -50,8 +49,6 @@ export const GptSearchBar = () => {
 				movieResults: tmdbResults,
 			})
 		);
-
-		console.log(tmdbResults);
 	};
 	return (
 		<div className="pt-[40%] md:pt-[10%] flex justify-center">
